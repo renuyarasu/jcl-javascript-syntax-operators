@@ -1,8 +1,10 @@
 // JavaScript Syntax and Operators
 console.clear();
 
-function simpleSwitch() {
-    let productId = 2;
+function strictComparison() {
+    
+    let productId = '2'; //string
+
     switch (productId) {
         case 1:
             console.log('Product 1');
@@ -19,3 +21,5 @@ function simpleSwitch() {
             console.log('No products available');
     }
 }
+
+// No products available
