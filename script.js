@@ -21,9 +21,11 @@ function blockScopeProblem() {
             break;
         }
 
-        default:
+        default: {
             let message = 'No products available'
             console.log(message);
+        }
+
     }
 }
 
