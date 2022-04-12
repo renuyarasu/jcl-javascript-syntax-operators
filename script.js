@@ -58,12 +58,12 @@ let _product = [
     },
 ];
 
-// Break statement
+// Continue statement
 
-function breakSample(){
+function continueSample(){
     for(const item of _product){
-        if(item.productID > 261){
-            break;
+        if(item.productID > 260){
+            continue;
         }
         console.log(JSON.stringify(item));
     }
