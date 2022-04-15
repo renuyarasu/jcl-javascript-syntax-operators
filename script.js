@@ -1,34 +1,37 @@
 // JavaScript Syntax and Operators
 console.clear();
 
-// Logical Operators
+// Short Circuiting (&&)
 
-function logicalOperators() {
-    let price = 100;
+function shortCircuitingAnd() {
+    let result;
+    // if first result is false, the second part is never evaluated
+    result = isColorRed('Black') && isGreaterThen1400(1401);
+}
 
-    //AND (&&) Operators
-    if (price > 10 && price < 1000) {
-        console.log('price > 10 && price < 1000 is "true"');
-    }
+function isColorRed(value) {
+    console.log('in the isColorRed() function');
+    return value == 'Red'
+}
+function isGreaterThen1400(value) {
+    console.log('In the isGreaterThen1400() function');
+    return value > 1400;
+}
 
-    //AND (&&) Operators
+// Short Circuiting(||)
 
-    if (price > 10 && price > 1000) {
-        console.log('price > 10 && price < 1000 is "true"');
-    } else {
-        console.log('price > 10 && price < 1000 is "false"');
-    }
+function shortCircuitingOr() {
+    let result;
 
-    //OR (||) Operators
+    console.log(" ");
+    console.log('Calling isColorRed() first');
+    //Each expression is evaluated until one returns a true
+    result = isColorRed('Red') || isGreaterThen1400(200);
 
-    if (price > 10 || price < 1000) {
-        console.log('price > 10 || price < 1000 is "true"');
-    } else {
-        console.log('price > 10 || price < 1000 is "false"');
-    }
-    //NOT ! Operators
-    if (!(price > 10)) {
-        console.log('!(price > 10) is "true"');
-    }
-    
-};
+    //Each expression is evaluated until one returns a true
+    // the rest are then skipped
+    console.log(" ");
+    console.log('Calling isGreaterThen1400() fisrt');
+    result = isGreaterThen1400(200) || isColorRed('Black');
+
+}
